@@ -2,6 +2,10 @@
 mcp>=1.0.0
 dspy-ai>=2.4.0
 
+# Pydantic for configuration and models
+pydantic>=2.7.0
+pydantic-settings>=2.0.0
+
 # Additional utilities
 aiofiles>=23.0.0
 asyncio-mqtt>=0.16.0
