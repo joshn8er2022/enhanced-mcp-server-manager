@@ -1,0 +1,17 @@
+# Core MCP and DSPy dependencies
+mcp>=1.0.0
+dspy-ai>=2.4.0
+
+# Additional utilities
+aiofiles>=23.0.0
+asyncio-mqtt>=0.16.0
+
+# Optional dependencies for specific servers
+# Uncomment as needed:
+# psycopg2-binary>=2.9.0  # For PostgreSQL server
+# docker>=6.0.0           # For Docker server
+# kubernetes>=27.0.0      # For Kubernetes server
+# beautifulsoup4>=4.12.0  # For web scraping
+# lxml>=4.9.0             # For XML/HTML parsing
+# pandas>=2.0.0           # For data processing
+# pyyaml>=6.0.0           # For YAML processing

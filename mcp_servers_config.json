@@ -1,0 +1,297 @@
+{
+  "mcp_servers": [
+    {
+      "name": "filesystem",
+      "description": "File system operations - read, write, list files and directories",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/workspace"],
+      "category": "file_management",
+      "capabilities": ["read_files", "write_files", "list_directories", "file_operations"]
+    },
+    {
+      "name": "git",
+      "description": "Git repository operations - status, log, diff, commit, branch management",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-git", "--repository", "."],
+      "category": "version_control",
+      "capabilities": ["git_status", "git_log", "git_diff", "git_commit", "branch_management"]
+    },
+    {
+      "name": "sqlite",
+      "description": "SQLite database operations - query, schema inspection, data manipulation",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "--db-path", "/tmp/example.db"],
+      "category": "database",
+      "capabilities": ["sql_queries", "schema_inspection", "data_manipulation"]
+    },
+    {
+      "name": "postgres",
+      "description": "PostgreSQL database operations (local instance)",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://localhost:5432/postgres"],
+      "category": "database",
+      "capabilities": ["sql_queries", "schema_inspection", "data_manipulation"],
+      "requirements": ["local_postgres"]
+    },
+    {
+      "name": "memory",
+      "description": "Persistent memory storage for conversations and data",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "category": "storage",
+      "capabilities": ["persistent_memory", "data_storage", "conversation_history"]
+    },
+    {
+      "name": "brave_search",
+      "description": "Web search using Brave Search API (free tier available)",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "category": "web_search",
+      "capabilities": ["web_search", "search_results"],
+      "note": "Requires BRAVE_API_KEY but has free tier"
+    },
+    {
+      "name": "puppeteer",
+      "description": "Web scraping and browser automation",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+      "category": "web_automation",
+      "capabilities": ["web_scraping", "browser_automation", "screenshot"]
+    },
+    {
+      "name": "shell",
+      "description": "Execute shell commands safely",
+      "command": "python",
+      "args": ["-m", "mcp_server_shell"],
+      "category": "system",
+      "capabilities": ["shell_execution", "system_commands"],
+      "security_note": "Use with caution - can execute arbitrary commands"
+    },
+    {
+      "name": "time",
+      "description": "Time and date operations, timezone conversions",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-time"],
+      "category": "utilities",
+      "capabilities": ["current_time", "timezone_conversion", "date_formatting"]
+    },
+    {
+      "name": "fetch",
+      "description": "HTTP requests and web content fetching",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "category": "web",
+      "capabilities": ["http_requests", "web_content", "api_calls"]
+    },
+    {
+      "name": "docker",
+      "description": "Docker container management and operations",
+      "command": "python",
+      "args": ["-m", "mcp_server_docker"],
+      "category": "containerization",
+      "capabilities": ["container_management", "docker_operations", "image_handling"],
+      "requirements": ["docker_installed"]
+    },
+    {
+      "name": "kubernetes",
+      "description": "Kubernetes cluster management and operations",
+      "command": "python",
+      "args": ["-m", "mcp_server_kubernetes"],
+      "category": "orchestration",
+      "capabilities": ["k8s_management", "pod_operations", "service_management"],
+      "requirements": ["kubectl_configured"]
+    },
+    {
+      "name": "json_processor",
+      "description": "JSON data processing, validation, and transformation",
+      "command": "python",
+      "args": ["-m", "mcp_server_json"],
+      "category": "data_processing",
+      "capabilities": ["json_validation", "json_transformation", "data_extraction"]
+    },
+    {
+      "name": "csv_processor",
+      "description": "CSV file processing, analysis, and manipulation",
+      "command": "python",
+      "args": ["-m", "mcp_server_csv"],
+      "category": "data_processing",
+      "capabilities": ["csv_reading", "csv_writing", "data_analysis", "csv_transformation"]
+    },
+    {
+      "name": "markdown_processor",
+      "description": "Markdown processing, conversion, and manipulation",
+      "command": "python",
+      "args": ["-m", "mcp_server_markdown"],
+      "category": "document_processing",
+      "capabilities": ["markdown_parsing", "html_conversion", "document_processing"]
+    },
+    {
+      "name": "yaml_processor",
+      "description": "YAML file processing and validation",
+      "command": "python",
+      "args": ["-m", "mcp_server_yaml"],
+      "category": "data_processing",
+      "capabilities": ["yaml_parsing", "yaml_validation", "yaml_transformation"]
+    },
+    {
+      "name": "log_analyzer",
+      "description": "Log file analysis and parsing",
+      "command": "python",
+      "args": ["-m", "mcp_server_logs"],
+      "category": "monitoring",
+      "capabilities": ["log_parsing", "log_analysis", "pattern_matching", "error_detection"]
+    },
+    {
+      "name": "system_monitor",
+      "description": "System resource monitoring and information",
+      "command": "python",
+      "args": ["-m", "mcp_server_system"],
+      "category": "monitoring",
+      "capabilities": ["cpu_monitoring", "memory_usage", "disk_usage", "process_monitoring"]
+    },
+    {
+      "name": "network_tools",
+      "description": "Network utilities - ping, traceroute, port scanning",
+      "command": "python",
+      "args": ["-m", "mcp_server_network"],
+      "category": "networking",
+      "capabilities": ["ping", "traceroute", "port_scan", "network_diagnostics"]
+    },
+    {
+      "name": "text_processor",
+      "description": "Text processing utilities - search, replace, analysis",
+      "command": "python",
+      "args": ["-m", "mcp_server_text"],
+      "category": "text_processing",
+      "capabilities": ["text_search", "text_replace", "text_analysis", "regex_operations"]
+    }
+  ],
+  "installation_commands": {
+    "node_servers": [
+      "npm install -g @modelcontextprotocol/server-filesystem",
+      "npm install -g @modelcontextprotocol/server-git",
+      "npm install -g @modelcontextprotocol/server-sqlite",
+      "npm install -g @modelcontextprotocol/server-postgres",
+      "npm install -g @modelcontextprotocol/server-memory",
+      "npm install -g @modelcontextprotocol/server-brave-search",
+      "npm install -g @modelcontextprotocol/server-puppeteer",
+      "npm install -g @modelcontextprotocol/server-time",
+      "npm install -g @modelcontextprotocol/server-fetch"
+    ],
+    "python_servers": [
+      "pip install mcp-server-shell",
+      "pip install mcp-server-docker",
+      "pip install mcp-server-kubernetes",
+      "pip install mcp-server-json",
+      "pip install mcp-server-csv",
+      "pip install mcp-server-markdown",
+      "pip install mcp-server-yaml",
+      "pip install mcp-server-logs",
+      "pip install mcp-server-system",
+      "pip install mcp-server-network",
+      "pip install mcp-server-text"
+    ]
+  },
+  "categories": {
+    "file_management": {
+      "description": "File and directory operations",
+      "servers": ["filesystem"]
+    },
+    "version_control": {
+      "description": "Git and version control operations",
+      "servers": ["git"]
+    },
+    "database": {
+      "description": "Database operations and queries",
+      "servers": ["sqlite", "postgres"]
+    },
+    "storage": {
+      "description": "Data storage and memory operations",
+      "servers": ["memory"]
+    },
+    "web_search": {
+      "description": "Web search capabilities",
+      "servers": ["brave_search"]
+    },
+    "web_automation": {
+      "description": "Web scraping and browser automation",
+      "servers": ["puppeteer"]
+    },
+    "web": {
+      "description": "Web content and HTTP operations",
+      "servers": ["fetch"]
+    },
+    "system": {
+      "description": "System-level operations",
+      "servers": ["shell"]
+    },
+    "utilities": {
+      "description": "General utility functions",
+      "servers": ["time"]
+    },
+    "containerization": {
+      "description": "Container management",
+      "servers": ["docker"]
+    },
+    "orchestration": {
+      "description": "Container orchestration",
+      "servers": ["kubernetes"]
+    },
+    "data_processing": {
+      "description": "Data processing and transformation",
+      "servers": ["json_processor", "csv_processor", "yaml_processor"]
+    },
+    "document_processing": {
+      "description": "Document processing and conversion",
+      "servers": ["markdown_processor"]
+    },
+    "monitoring": {
+      "description": "System and log monitoring",
+      "servers": ["log_analyzer", "system_monitor"]
+    },
+    "networking": {
+      "description": "Network utilities and diagnostics",
+      "servers": ["network_tools"]
+    },
+    "text_processing": {
+      "description": "Text processing and analysis",
+      "servers": ["text_processor"]
+    }
+  },
+  "usage_examples": {
+    "basic_setup": {
+      "description": "Basic setup with essential servers",
+      "servers": ["filesystem", "git", "memory", "time", "fetch"]
+    },
+    "development_setup": {
+      "description": "Development-focused server setup",
+      "servers": ["filesystem", "git", "sqlite", "shell", "docker", "text_processor"]
+    },
+    "data_analysis_setup": {
+      "description": "Data analysis and processing setup",
+      "servers": ["filesystem", "csv_processor", "json_processor", "sqlite", "system_monitor"]
+    },
+    "web_automation_setup": {
+      "description": "Web scraping and automation setup",
+      "servers": ["puppeteer", "fetch", "brave_search", "memory", "json_processor"]
+    },
+    "devops_setup": {
+      "description": "DevOps and system administration setup",
+      "servers": ["docker", "kubernetes", "system_monitor", "log_analyzer", "network_tools", "shell"]
+    }
+  },
+  "security_considerations": {
+    "shell": "Can execute arbitrary system commands - use with extreme caution",
+    "docker": "Requires Docker daemon access - ensure proper permissions",
+    "kubernetes": "Requires kubectl configuration - ensure cluster access is appropriate",
+    "filesystem": "Can read/write files - restrict to appropriate directories",
+    "network_tools": "Can perform network operations - be aware of network policies"
+  },
+  "requirements": {
+    "node": "Node.js 16+ required for NPX-based servers",
+    "python": "Python 3.8+ required for Python-based servers",
+    "docker": "Docker daemon required for Docker server",
+    "kubectl": "kubectl configured for Kubernetes server",
+    "postgres": "PostgreSQL instance required for Postgres server"
+  }
+}
